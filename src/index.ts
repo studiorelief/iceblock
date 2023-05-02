@@ -1,10 +1,21 @@
 import Chart from 'chart.js/auto';
 
+import { loadModelViewerScript } from '$utils/modal-viewer';
+
 window.Webflow ||= [];
 window.Webflow.push(() => {
+  // load modalviewser
+  loadModelViewerScript()
+    .then(() => {
+      console.log('Model viewer script loaded successfully');
+    })
+    .catch((error) => {
+      console.error('Error loading model viewer script:', error);
+    });
+
   // Chart JS example
 
-  // Chart 1
+  /* // Chart 1
   const ctx1 = document.querySelector<HTMLCanvasElement>('[data-element=chart-1]');
   if (!ctx1) return;
   new Chart(ctx1, {
@@ -52,12 +63,79 @@ window.Webflow.push(() => {
         },
       ],
     },
-  });
+  }); */
 
   // Chart 3
-  const ctx3 = document.querySelector<HTMLCanvasElement>('[data-element=chart-3]');
+
+  const ctx3 = document.querySelector<HTMLCanvasElement>('[data-element=chart-3]').getContext('2d');
   if (!ctx3) return;
+
+  Chart.defaults.color = '#00273f';
+  Chart.defaults.borderColor = '#fff';
+
+  const gradientBg = ctx3.createLinearGradient(0, 0, '400', '400');
+  // x0 = starting point of the gradient in the canvas horizontal (left)
+  // y0 = starting point vertical (top)
+  // x1 = ending point (right)
+  // y1 = (bottom)
+
+  gradientBg.addColorStop(0, '#81e5fe');
+  gradientBg.addColorStop(0.7, '#00273f');
+  gradientBg.addColorStop(1, '#00273f');
+
   new Chart(ctx3, {
+    type: 'line',
+    data: {
+      labels: ['01-04', '02-04', '03-04', '04-04', '05-04', '06-04', '07-04'],
+      datasets: [
+        {
+          label: 'Live Performance',
+          data: [12, 19, 3, 5, 2, 3, 5],
+          borderWidth: 2,
+          borderColor: '#81E5FE',
+          pointRadius: 5,
+          pointHoverRadius: 7.5,
+          pointBackgroundColor: '#00273f',
+          pointBorderWidth: 1,
+          pointHitRadius: 15,
+          tension: 0.5,
+          fill: true,
+          backgroundColor: gradientBg,
+        },
+      ],
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        y: {
+          min: -5,
+          ticks: {
+            callback: (value) => {
+              return `${value} %`;
+            },
+          },
+        },
+      },
+      /*       animations: {
+        tension: {
+          duration: 500,
+          easing: 'linear',
+          from: 1,
+          to: 1,
+          loop: true,
+        },
+      }, */
+    },
+  });
+
+  // Chart 4
+  const ctx4 = document.querySelector<HTMLCanvasElement>('[data-element=chart-4]');
+  if (!ctx4) return;
+  new Chart(ctx4, {
     type: 'line',
     data: {
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
