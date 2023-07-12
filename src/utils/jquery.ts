@@ -12,14 +12,27 @@ function jqueryCC() {
         height: '3.5rem',
       });
     } else {
-      $('.navbar_bg-scrolled').css({
-        transform: 'translateY(-5.5rem)',
-        height: '100%',
-      });
+      // Check if URL does not contain '/blog' before executing this block
+      if (!window.location.href.includes('blog')) {
+        $('.navbar_bg-scrolled').css({
+          transform: 'translateY(-10rem)',
+          height: '100%',
+        });
+      }
       $('.navbar_component').css({
         height: '5.5rem',
       });
     }
+  });
+
+  // Mirror clic on form
+  $(document).ready(function () {
+    $('#individual, #asset-manager, #bank, #vc, #start-investing, #advisory, #partnership').on(
+      'click',
+      function () {
+        $('.right-arrow').trigger('click');
+      }
+    );
   });
 }
 export { jqueryCC };

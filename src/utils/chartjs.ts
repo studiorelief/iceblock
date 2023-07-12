@@ -14,7 +14,7 @@ function ChartJs() {
       datasets: [
         {
           label: 'Live Performance',
-          data: [12, 4, 3, 5, 2, 3, 5],
+          data: [20, 4, 3, 5, 2, 3, 5],
           borderWidth: 2,
           borderColor: '#568DAA',
           pointRadius: 5,
@@ -57,7 +57,7 @@ function ChartJs() {
     },
   });
 
-  // Chart 4
+  /* // Chart 4
   const ctx4 = document.querySelector<HTMLCanvasElement>('[data-element=chart-4]');
   if (!ctx4) return;
 
@@ -89,7 +89,7 @@ function ChartJs() {
         },
       },
     },
-  });
+  }); */
 }
 
 export { ChartJs };
