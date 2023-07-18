@@ -3,7 +3,7 @@ function jqueryCC() {
   $(window).scroll(function () {
     const windowScrollTop = $(this).scrollTop();
 
-    if (windowScrollTop > 200 && $('.navbar_bg-scrolled').css('display') === 'block') {
+    if (windowScrollTop > 50 && $('.navbar_bg-scrolled').css('display') === 'block') {
       $('.navbar_bg-scrolled').css({
         transform: 'translateY(0rem)',
         height: '100%',
@@ -27,12 +27,35 @@ function jqueryCC() {
 
   // Mirror clic on form
   $(document).ready(function () {
-    $('#individual, #asset-manager, #bank, #vc, #start-investing, #advisory, #partnership').on(
+    $('#individual, #asset-manager, #bank, #VC, #start-investing, #advisory, #partnership').on(
       'click',
       function () {
         $('.right-arrow').trigger('click');
       }
     );
+  });
+
+  // toggle is-active class
+  $(document).ready(function () {
+    $('.live-performance_tabs').click(function () {
+      $('.live-performance_tabs').removeClass('is-active');
+      $(this).addClass('is-active');
+    });
+  });
+
+  // tabs performance
+  const tabs = ['innovation', 'vision', 'dynamic'];
+
+  tabs.forEach((tab) => {
+    $(`.live-performance_tabs.is-${tab}`).click(function () {
+      tabs.forEach((otherTab) => {
+        const zIndex = otherTab === tab ? '10' : '0';
+        $(`.chart-wrapper.is-live-performance.is-looker.is-${otherTab}.w-embed.w-iframe`).css(
+          'z-index',
+          zIndex
+        );
+      });
+    });
   });
 }
 export { jqueryCC };

@@ -1,4 +1,4 @@
-import { ChartJs } from '$utils/chartjs';
+/* import { ChartJs } from '$utils/chartjs'; */
 import { loadAttributesScript } from '$utils/fs-attributes';
 import { jqueryCC } from '$utils/jquery';
 import { loadModelViewerScript } from '$utils/modal-viewer';
@@ -12,7 +12,7 @@ window.Webflow.push(() => {
   jqueryCC();
 
   // Load ChartJS
-  ChartJs();
+  /*   ChartJs(); */
 
   // load modalviewser
   loadModelViewerScript();
