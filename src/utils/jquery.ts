@@ -13,7 +13,11 @@ function jqueryCC() {
       });
     } else {
       // Check if URL does not contain '/blog' before executing this block
-      if (!window.location.href.includes('blog')) {
+      if (
+        !window.location.href.includes('blog') &&
+        !window.location.href.includes('privacy-policy') &&
+        !window.location.href.includes('terms')
+      ) {
         $('.navbar_bg-scrolled').css({
           transform: 'translateY(-10rem)',
           height: '100%',

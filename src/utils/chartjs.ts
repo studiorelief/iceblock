@@ -89,7 +89,8 @@ function ChartJs() {
         },
       },
     },
-  }); */
+  });
+} */
 }
 
 export { ChartJs };
