@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "@finsweet/ts-utils": "^0.39.1",
-    "chart.js": "^4.3.0"
+    "chart.js": "^4.3.0",
+    "chartjs-plugin-datalabels": "^2.2.0"
   }
 }

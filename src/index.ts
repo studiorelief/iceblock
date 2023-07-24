@@ -1,4 +1,8 @@
+import { chartDynamic } from '$utils/chartdynamic';
+import { chartInnovation } from '$utils/chartinnovation';
 import { ChartJs } from '$utils/chartjs';
+import { chartVision } from '$utils/chartvision';
+import { updateAverages } from '$utils/dataCms';
 import { loadAttributesScript } from '$utils/fs-attributes';
 import { jqueryCC } from '$utils/jquery';
 import { loadModelViewerScript } from '$utils/modal-viewer';
@@ -13,6 +17,14 @@ window.Webflow.push(() => {
 
   // Load ChartJS
   ChartJs();
+
+  // Load chart for CMS
+  chartInnovation();
+  chartVision();
+  chartDynamic();
+
+  // Load static data for CMS
+  updateAverages();
 
   // load modalviewser
   loadModelViewerScript();
