@@ -20,9 +20,9 @@ function getMonthName(monthNumber) {
   return months[monthNumber - 1];
 }
 
-function chartVision() {
+function chartFundamental() {
   // Variable globale pour stocker l'instance du graphique
-  let chartVision = null;
+  let chartFundamental = null;
 
   // Fonction pour récupérer les données JSON
   async function fetchData(url) {
@@ -32,13 +32,13 @@ function chartVision() {
   }
 
   // Function to draw the chart with given time range and portfolio filter
-  async function drawChartVision() {
-    const ctx = document.getElementById('chart-Vision-Portfolio');
+  async function drawChartFundamental() {
+    const ctx = document.getElementById('chart-Fundamental-Portfolio');
     if (!ctx) return;
 
-    if (chartVision) {
-      // Si chartVision existe déjà, le détruire avant d'en créer un nouveau
-      chartVision.destroy();
+    if (chartFundamental) {
+      // Si chartFundamental existe déjà, le détruire avant d'en créer un nouveau
+      chartFundamental.destroy();
     }
 
     let data = await fetchData(
@@ -53,8 +53,8 @@ function chartVision() {
     // Triez les données par date
     data.sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime());
 
-    // Filtrer les données pour le portfolio '🧊 Vision'
-    data = data.filter((row) => row[1] === '🧊 Vision');
+    // Filtrer les données pour le portfolio '🧊 Fundamental (simulated)'
+    data = data.filter((row) => row[1] === '🧊 Fundamental (simulated)');
 
     // Filtrer les données pour les 3 derniers mois
     const cutoffDate = new Date();
@@ -95,13 +95,13 @@ function chartVision() {
 
     Chart.defaults.color = '#00273f';
     Chart.defaults.borderColor = 'rgba(86, 141, 170, 0.1)';
-    chartVision = new Chart(ctx, {
+    chartFundamental = new Chart(ctx, {
       type: 'line',
       data: {
         labels: labels,
         datasets: [
           {
-            label: '🧊 Vision',
+            label: '🧊 Fundamental',
             data: dataset,
             borderWidth: 2,
             borderColor: 'rgba(13, 39, 63, 0.2)',
@@ -124,7 +124,7 @@ function chartVision() {
           datalabels: {
             // Add the datalabels configuration object
             align: 'top', // Set the position of the data labels
-            color: '#00273f', // Set the color of the data labelsJ'
+            color: '#00273f', // Set the color of the data labels
             formatter: (value) => {
               // Format the data label content
               return `${value}%`; // Add any additional formatting if needed
@@ -151,7 +151,7 @@ function chartVision() {
     });
   }
 
-  drawChartVision(); // Call the function to set up the chart
+  drawChartFundamental(); // Call the function to set up the chart
 }
 
-export { chartVision };
+export { chartFundamental };

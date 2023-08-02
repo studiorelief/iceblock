@@ -1,4 +1,5 @@
 import { chartDynamic } from '$utils/chartdynamic';
+import { chartFundamental } from '$utils/chartfundamental';
 import { chartInnovation } from '$utils/chartinnovation';
 import { ChartJs } from '$utils/chartjs';
 import { chartVision } from '$utils/chartvision';
@@ -22,6 +23,7 @@ window.Webflow.push(() => {
   chartInnovation();
   chartVision();
   chartDynamic();
+  chartFundamental();
 
   // Load static data for CMS
   updateAverages();
@@ -44,6 +46,7 @@ window.Webflow.push(() => {
     loadAttributesScript(
       'https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsstatic@1/cmsstatic.js'
     ),
+    loadAttributesScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmstabs@1/cmstabs.js'),
   ])
     .then(() => {
       console.log('All Finsweet Attributes scripts loaded');

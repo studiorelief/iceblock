@@ -21,7 +21,7 @@ async function drawChart(timeRangeValue, portfolioFilterValue) {
   }
 
   let data = await fetchData(
-    'https://sheets.googleapis.com/v4/spreadsheets/1VEie24sYE2Mzs7TUHrHZ8QMSSieJQ1-N1nGkML0Ulzs/values/pnl_website_data!A1:C5000?key=AIzaSyD9WfJEr_jK5zc0aEnHaTcVFjpu7BaL-z8'
+    'https://sheets.googleapis.com/v4/spreadsheets/1VEie24sYE2Mzs7TUHrHZ8QMSSieJQ1-N1nGkML0Ulzs/values/pnl_website_data!A1:C5000?key=AIzaSyDfx3berSA6lDP_UOQjarrvVO-sWr08Jhw'
   );
 
   // Triez les données par date
@@ -32,6 +32,7 @@ async function drawChart(timeRangeValue, portfolioFilterValue) {
     'Innovation Portfolio': '🧊 Innovation',
     'Vision Portfolio': '🧊 Vision',
     'Dynamic Portfolio': '🧊 Dynamic',
+    'Fundamental Portfolio': '🧊 Fundamental (simulated)',
   };
 
   data = data.filter((row) => row[1] === portfolioMap[portfolioFilterValue]);
@@ -101,6 +102,10 @@ async function drawChart(timeRangeValue, portfolioFilterValue) {
         legend: {
           display: false,
         },
+      },
+      animation: {
+        duration: 500,
+        easing: 'linear',
       },
       scales: {
         y: {

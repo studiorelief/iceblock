@@ -42,7 +42,7 @@ function chartDynamic() {
     }
 
     let data = await fetchData(
-      'https://sheets.googleapis.com/v4/spreadsheets/1VEie24sYE2Mzs7TUHrHZ8QMSSieJQ1-N1nGkML0Ulzs/values/pnl_website_data!A1:C5000?key=AIzaSyD9WfJEr_jK5zc0aEnHaTcVFjpu7BaL-z8'
+      'https://sheets.googleapis.com/v4/spreadsheets/1VEie24sYE2Mzs7TUHrHZ8QMSSieJQ1-N1nGkML0Ulzs/values/pnl_website_data!A1:C5000?key=AIzaSyDfx3berSA6lDP_UOQjarrvVO-sWr08Jhw'
     );
 
     if (!data) {
@@ -130,6 +130,10 @@ function chartDynamic() {
               return `${value}%`; // Add any additional formatting if needed
             },
           },
+        },
+        animation: {
+          duration: 0,
+          easing: 'linear',
         },
         scales: {
           y: {
