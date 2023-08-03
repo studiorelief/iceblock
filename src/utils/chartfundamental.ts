@@ -136,7 +136,7 @@ function chartFundamental() {
           },
         },
         animation: {
-          duration: 0,
+          duration: 1000,
           easing: 'linear',
         },
         scales: {
