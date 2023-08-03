@@ -146,7 +146,7 @@ function chartVision() {
             },
             min: undefined,
             ticks: {
-              display: false, // Hide the Y-axis tick labels
+              display: false,
             },
           },
         },
