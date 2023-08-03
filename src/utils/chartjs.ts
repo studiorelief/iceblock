@@ -74,6 +74,10 @@ async function drawChart(timeRangeValue, portfolioFilterValue) {
     dataset.push(((value.sum / value.count) * 100).toFixed(2));
   }
 
+  const gradient = ctx3.createLinearGradient(0, 0, 0, 200);
+  gradient.addColorStop(0, 'rgb(74, 183, 240, 0.2)');
+  gradient.addColorStop(1, 'rgb(74, 183, 240,0.05)');
+
   Chart.defaults.color = '#00273f';
   Chart.defaults.borderColor = 'rgba(86, 141, 170, 0.1)';
   myChart = new Chart(ctx3, {
@@ -92,8 +96,8 @@ async function drawChart(timeRangeValue, portfolioFilterValue) {
           pointBorderWidth: 2,
           pointHitRadius: 15,
           tension: 0.25,
-          fill: true,
-          backgroundColor: 'rgba(86, 141, 170, 0.1)',
+          fill: 'start',
+          backgroundColor: gradient,
         },
       ],
     },

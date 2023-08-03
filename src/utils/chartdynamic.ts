@@ -93,6 +93,10 @@ function chartDynamic() {
       dataset.push(((value.sum / value.count) * 100).toFixed(2));
     }
 
+    const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 200);
+    gradient.addColorStop(0, 'rgba(74, 183, 240, 0.2)');
+    gradient.addColorStop(1, 'rgba(74, 183, 240, 0.05)');
+
     Chart.defaults.color = '#00273f';
     Chart.defaults.borderColor = 'rgba(86, 141, 170, 0.1)';
     chartDynamic = new Chart(ctx, {
@@ -104,15 +108,15 @@ function chartDynamic() {
             label: '🧊 Dynamic',
             data: dataset,
             borderWidth: 2,
-            borderColor: 'rgba(13, 39, 63, 0.2)',
-            pointRadius: 4, // Set the point radius to a non-zero value
-            pointHoverRadius: 4, // Set the point hover radius to a non-zero value
-            pointBackgroundColor: 'rgba(13, 39, 63, 0.2)',
-            pointBorderWidth: 0,
-            pointHitRadius: 4, // Set the point hit radius to a non-zero value
+            borderColor: '#568DAA',
+            pointRadius: 5,
+            pointHoverRadius: 7.5,
+            pointBackgroundColor: '#96F7FF',
+            pointBorderWidth: 2,
+            pointHitRadius: 15,
             tension: 0.25,
-            fill: true,
-            backgroundColor: 'rgba(13, 39, 63, 0.1)',
+            fill: 'start',
+            backgroundColor: gradient,
           },
         ],
       },
