@@ -123,7 +123,7 @@ function chartVision() {
       options: {
         plugins: {
           legend: {
-            display: true,
+            display: false,
           },
           datalabels: {
             // Add the datalabels configuration object
