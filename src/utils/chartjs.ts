@@ -130,7 +130,7 @@ async function drawChart(timeRangeValue, portfolioFilterValue) {
 
 async function ChartJs() {
   let timeRangeValue = 'all'; // Initial time range value
-  let portfolioFilterValue = 'Innovation Portfolio'; // Initial portfolio filter value
+  let portfolioFilterValue = 'Fundamental Portfolio'; // Initial portfolio filter value
 
   const timeRangeRadios = document.getElementsByName('range');
   const portfolioFilterRadios = document.getElementsByName('portfolio');

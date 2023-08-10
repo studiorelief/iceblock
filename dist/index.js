@@ -15857,7 +15857,7 @@
   }
   async function ChartJs() {
     let timeRangeValue = "all";
-    let portfolioFilterValue = "Innovation Portfolio";
+    let portfolioFilterValue = "Fundamental Portfolio";
     const timeRangeRadios = document.getElementsByName("range");
     const portfolioFilterRadios = document.getElementsByName("portfolio");
     for (const radio of timeRangeRadios) {
