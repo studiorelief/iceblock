@@ -16088,12 +16088,11 @@
       }
     });
     $(document).ready(function() {
-      $("#individual, #asset-manager, #bank, #VC, #start-investing, #advisory, #partnership").on(
-        "click",
-        function() {
-          $(".right-arrow").trigger("click");
-        }
-      );
+      $(
+        "#individual, #asset-manager, #bank, #VC, #other-step-1, #start-investing, #advisory, #partnership, #other-step-2"
+      ).on("click", function() {
+        $(".right-arrow").trigger("click");
+      });
     });
     $(document).ready(function() {
       $(".live-performance_tabs").click(function() {

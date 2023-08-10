@@ -31,12 +31,11 @@ function jqueryCC() {
 
   // Mirror clic on form
   $(document).ready(function () {
-    $('#individual, #asset-manager, #bank, #VC, #start-investing, #advisory, #partnership').on(
-      'click',
-      function () {
-        $('.right-arrow').trigger('click');
-      }
-    );
+    $(
+      '#individual, #asset-manager, #bank, #VC, #other-step-1, #start-investing, #advisory, #partnership, #other-step-2'
+    ).on('click', function () {
+      $('.right-arrow').trigger('click');
+    });
   });
 
   // toggle is-active class
