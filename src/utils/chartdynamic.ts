@@ -110,9 +110,11 @@ function chartDynamic() {
             borderWidth: 2,
             borderColor: '#568DAA',
             pointRadius: 5,
-            pointHoverRadius: 7.5,
             pointBackgroundColor: '#96F7FF',
             pointBorderWidth: 2,
+            pointHoverRadius: 5,
+            pointHoverBorderWidth: 2,
+            pointHoverBackgroundColor: '#568DAA',
             pointHitRadius: 15,
             tension: 0.25,
             fill: 'start',
@@ -136,7 +138,7 @@ function chartDynamic() {
           },
         },
         animation: {
-          duration: 1000,
+          duration: 0,
           easing: 'linear',
         },
         scales: {
