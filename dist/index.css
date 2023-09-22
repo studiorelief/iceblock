@@ -1,15 +1,1 @@
-/* src/index.css */
-.portfolios_tabs-l-wrapper.w-inline-block.w-tab-link > .portfolios_tabs-link > .portfolios_icon-w {
-  background-color: red;
-  transform: translate(0rem, 0px);
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: ease;
-}
-.portfolios_tabs-l-wrapper.w-inline-block.w-tab-link.w--current > .portfolios_tabs-link > .portfolios_icon-w {
-  transform: translate(-1.875rem, 0px);
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: ease;
-}
-/*# sourceMappingURL=index.css.map */
+.portfolios_tabs-l-wrapper.w-inline-block.w-tab-link>.portfolios_tabs-link>.portfolios_icon-w{background-color:red;transform:translate(0);transition-property:transform;transition-duration:.25s;transition-timing-function:ease}.portfolios_tabs-l-wrapper.w-inline-block.w-tab-link.w--current>.portfolios_tabs-link>.portfolios_icon-w{transform:translate(-1.875rem);transition-property:transform;transition-duration:.25s;transition-timing-function:ease}

@@ -74,6 +74,30 @@ async function drawChart(timeRangeValue, portfolioFilterValue) {
     dataset.push(((value.sum / value.count) * 100).toFixed(2));
   }
 
+  // Mois tooltip
+  const moisFrancais = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  // Name tooltip
+  const nameMapping = {
+    '🧊 Innovation': 'Innovation ',
+    '🧊 Vision': 'Vision ',
+    '🧊 Dynamic': 'Dynamic ',
+    '🧊 Fundamental (simulated)': 'Fundamental ',
+  };
+
   const gradient = ctx3.createLinearGradient(0, 0, 0, 200);
   gradient.addColorStop(0, 'rgb(74, 183, 240, 0.2)');
   gradient.addColorStop(1, 'rgb(74, 183, 240,0.05)');
@@ -91,7 +115,8 @@ async function drawChart(timeRangeValue, portfolioFilterValue) {
           borderWidth: 2,
           borderColor: '#568DAA',
           pointRadius: 5,
-          pointHoverRadius: 7.5,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: '#568daa',
           pointBackgroundColor: '#96F7FF',
           pointBorderWidth: 2,
           pointHitRadius: 15,
@@ -103,6 +128,26 @@ async function drawChart(timeRangeValue, portfolioFilterValue) {
     },
     options: {
       plugins: {
+        tooltip: {
+          callbacks: {
+            title: function (tooltipItems) {
+              const originalTitle = tooltipItems[0].label;
+              const [monthIndex, year] = originalTitle.split('-');
+              const monthName = moisFrancais[parseInt(monthIndex) - 1]; // -1 car les indices de tableau commencent à 0
+              return `${monthName} ${year}`;
+            },
+            label: function (context) {
+              let label = nameMapping[context.dataset.label] || context.dataset.label;
+              if (label) {
+                label += ': ';
+              }
+              if (context.parsed.y !== null) {
+                label += context.parsed.y + '%';
+              }
+              return label;
+            },
+          },
+        },
         legend: {
           display: false,
         },

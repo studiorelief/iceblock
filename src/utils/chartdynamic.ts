@@ -105,12 +105,13 @@ function chartDynamic() {
         labels: labels,
         datasets: [
           {
-            label: '🧊 Dynamic',
+            label: 'Dynamic ',
             data: dataset,
             borderWidth: 2,
             borderColor: '#568DAA',
             pointRadius: 5,
-            pointHoverRadius: 7.5,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#568daa',
             pointBackgroundColor: '#96F7FF',
             pointBorderWidth: 2,
             pointHitRadius: 15,
@@ -121,7 +122,29 @@ function chartDynamic() {
         ],
       },
       options: {
+        layout: {
+          padding: {
+            top: 32, // Ajoute un padding en haut de 20px
+            right: 0, // Vous pouvez également ajouter des paddings à droite, à gauche et en bas si nécessaire
+            bottom: 0,
+            left: 0,
+          },
+        },
         plugins: {
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                let label = context.dataset.label || '';
+                if (label) {
+                  label += ': ';
+                }
+                if (context.parsed.y !== null) {
+                  label += context.parsed.y + '%';
+                }
+                return label;
+              },
+            },
+          },
           legend: {
             display: false,
           },
@@ -136,7 +159,7 @@ function chartDynamic() {
           },
         },
         animation: {
-          duration: 1000,
+          duration: 0,
           easing: 'linear',
         },
         scales: {

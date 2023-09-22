@@ -31,6 +31,9 @@ devDependencies:
   '@playwright/test':
     specifier: ^1.32.1
     version: 1.32.1
+  '@types/jquery':
+    specifier: ^3.5.19
+    version: 3.5.19
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.57.0
     version: 5.57.0(@typescript-eslint/parser@5.57.0)(eslint@8.37.0)(typescript@5.0.3)
@@ -627,6 +630,12 @@ packages:
       ci-info: 3.8.0
     dev: true
 
+  /@types/jquery@3.5.19:
+    resolution: {integrity: sha512-KFbmk+dXfphHGuVCmlopgcNRCegN/21mkeoD4BzuJhVH0SJW3Uo2mLuAwb6oqTNV79EsRp6J7yC1BbKymjpx/g==}
+    dependencies:
+      '@types/sizzle': 2.3.3
+    dev: true
+
   /@types/json-schema@7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
@@ -653,6 +662,10 @@ packages:
 
   /@types/semver@7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
+    dev: true
+
+  /@types/sizzle@2.3.3:
+    resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
     dev: true
 
   /@typescript-eslint/eslint-plugin@5.57.0(@typescript-eslint/parser@5.57.0)(eslint@8.37.0)(typescript@5.0.3):
