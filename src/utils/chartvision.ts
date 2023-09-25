@@ -4,18 +4,18 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 // Function to convert the month number to the month name
 function getMonthName(monthNumber) {
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
     'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sept',
+    'Oct',
+    'Nov',
+    'Dec',
   ];
   return months[monthNumber - 1];
 }
