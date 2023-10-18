@@ -125,7 +125,7 @@ function chartVision() {
         layout: {
           padding: {
             top: 32, // Ajoute un padding en haut de 20px
-            right: 0, // Vous pouvez également ajouter des paddings à droite, à gauche et en bas si nécessaire
+            right: 32, // Vous pouvez également ajouter des paddings à droite, à gauche et en bas si nécessaire
             bottom: 0,
             left: 0,
           },
