@@ -11,7 +11,7 @@ import { loadModelViewerScript } from '$utils/modal-viewer';
 window.Webflow ||= [];
 window.Webflow.push(() => {
   // Added console.log statement
-  console.log('Hello World');
+  /* console.log('Hello World'); */
 
   // Load jQuery
   jqueryCC();
